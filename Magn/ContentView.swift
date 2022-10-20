@@ -18,14 +18,13 @@ struct ContentView: View {
                     Text("Hello Chef!")
                         .font(.largeTitle)
                         .fontWeight(.bold)
-//                        .foregroundColor(Color.black)
+                    //  .foregroundColor(Color.black)
                         .padding(.vertical, 5)
                         .padding(.horizontal)
                     Text("Let's create something tasty.")
                         .font(.subheadline)
                         .padding(.horizontal)
-//                    .foregroundColor(Color.black)
-                    
+                    //  .foregroundColor(Color.black)
                 }
                 
                 Image("chef")
@@ -35,7 +34,7 @@ struct ContentView: View {
             Text("Suggested")
                 .font(.title)
                 .fontWeight(.bold)
-                //.foregroundColor(Color.black)
+            //  .foregroundColor(Color.black)
                 .padding(.horizontal)
             
             
@@ -44,10 +43,9 @@ struct ContentView: View {
             }
             
             Spacer()
-            
         }
-        //        .frame(maxWidth: .infinity)
-        //        .background(Color(red: 242/255, green: 241/255, blue: 246/255))
+        .frame(maxWidth: .infinity)
+        .background(Color("AccentColor"))
     }
 }
 
