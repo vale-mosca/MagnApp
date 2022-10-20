@@ -26,11 +26,6 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color.black)
             
-            Text("Prova")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color.black)
-            
             List {
                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
             }
