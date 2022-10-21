@@ -9,43 +9,54 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 20.0) {
-            Image(systemName:"profile.fill")
-            
-            HStack(alignment: .top) {
+        NavigationView(){
+            VStack(alignment: .leading, spacing: 20.0) {
+                Image(systemName:"profile.fill")
                 
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Hello Chef!")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    //  .foregroundColor(Color.black)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal)
-                    Text("Let's create something tasty.")
-                        .font(.subheadline)
-                        .padding(.horizontal)
-                    //  .foregroundColor(Color.black)
+                HStack(alignment: .top) {
+                    
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Hello Chef!")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        //  .foregroundColor(Color.black)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal)
+                        Text("Let's create something tasty.")
+                            .font(.subheadline)
+                            .padding(.horizontal)
+                        //  .foregroundColor(Color.black)
+                    }
+                    
+                    Image("chef")
+                        .padding([.horizontal])
                 }
                 
-                Image("chef")
-                    .padding([.horizontal])
+                Text("Suggested")
+                    .font(.title)
+                    .fontWeight(.bold)
+                //  .foregroundColor(Color.black)
+                    .padding(.horizontal)
+                
+                
+                List {
+                    NavigationLink(destination: RelatedRecipies()) {
+                        Text("Tomato")
+                    }
+                    NavigationLink(destination: RelatedRecipies()) {
+                        Text("Tomato")
+                    }
+                    NavigationLink(destination: RelatedRecipies()) {
+                        Text("Tomato")
+                    }
+                }
+                
+                Spacer()
             }
-            
-            Text("Suggested")
-                .font(.title)
-                .fontWeight(.bold)
-            //  .foregroundColor(Color.black)
-                .padding(.horizontal)
-            
-            
-            List {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
-            }
-            
-            Spacer()
+            .frame(maxWidth: .infinity)
+            .background(Color("AccentColor"))
         }
-        .frame(maxWidth: .infinity)
-        .background(Color("AccentColor"))
+        
     }
 }
 
