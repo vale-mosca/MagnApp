@@ -49,6 +49,10 @@ struct ContentView: View {
                     NavigationLink(destination: RelatedRecipies()) {
                         Text("Tomato")
                     }
+                    
+                    NavigationLink(destination: RelatedRecipies()) {
+                        Text("Tomato")
+                    }
                 }
                 
                 Spacer()
