@@ -37,13 +37,18 @@ struct ContentView: View {
                 SearchBar(searchText: $searchText, searching: $searching)
                 
                 List {
-                    ForEach(myFruits.filter({ (fruit: String) -> Bool in
-                        return fruit.hasPrefix(searchText) || searchText == ""
-                    }), id: \.self) { fruit in
-                        NavigationLink(destination: RelatedRecipies()){
-                            Text(fruit)
+                    if(searchText == ""){
+                        RelatedRecipies()
+                    }else{
+                        ForEach(myFruits.filter({ (fruit: String) -> Bool in
+                            return fruit.hasPrefix(searchText)
+                        }), id: \.self) { fruit in
+                            NavigationLink(destination: RelatedRecipies()){
+                                Text(fruit)
+                            }
                         }
                     }
+                    
                 }
                     .listStyle(GroupedListStyle())
                     .navigationTitle(searching ? "Searching" : "Hello Chef!")
