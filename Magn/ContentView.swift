@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var searchText = ""
+    @State var searching = false
+        
+    let myFruits = [
+            "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒"
+    ]
     var body: some View {
+            
         NavigationView(){
-            VStack(alignment: .leading, spacing: 20.0) {
+            VStack(alignment: .leading) {
                 Image(systemName:"profile.fill")
                 
                 HStack(alignment: .top) {
                     
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Hello Chef!")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        //  .foregroundColor(Color.black)
-                            .padding(.vertical, 5)
-                            .padding(.horizontal)
+                        
                         Text("Let's create something tasty.")
                             .font(.subheadline)
                             .padding(.horizontal)
@@ -31,6 +34,34 @@ struct ContentView: View {
                     Image("chef")
                         .padding([.horizontal])
                 }
+                
+                SearchBar(searchText: $searchText, searching: $searching)
+                List {
+                    ForEach(myFruits.filter({ (fruit: String) -> Bool in
+                        return fruit.hasPrefix(searchText) || searchText == ""
+                    }), id: \.self) { fruit in
+                        Text(fruit)
+                    }
+                }
+                    .listStyle(GroupedListStyle())
+                    .navigationTitle(searching ? "Searching" : "Hello Chef!")
+                    .toolbar {
+                        if searching {
+                            Button("Cancel") {
+                                searchText = ""
+                                withAnimation {
+                                   searching = false
+                                   UIApplication.shared.dismissKeyboard()
+                                }
+                            }
+                        }
+                    }
+                    .gesture(DragGesture()
+                                .onChanged({ _ in
+                        UIApplication.shared.dismissKeyboard()
+                                })
+                    )
+            }
                 
                 Text("Suggested")
                     .font(.title)
@@ -62,7 +93,7 @@ struct ContentView: View {
         }
         
     }
-}
+
 
 extension View {
     var previewedInAllColorSchemes: some View {
@@ -76,3 +107,43 @@ struct ContentView_Previews: PreviewProvider {
             .previewedInAllColorSchemes
     }
 }
+
+struct SearchBar: View {
+    
+    @Binding var searchText: String
+    @Binding var searching: Bool
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(Color.gray)
+                .brightness(0.4)
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search ..", text: $searchText) { startedEditing in
+                    if startedEditing {
+                        withAnimation {
+                            searching = true
+                        }
+                    }
+                } onCommit: {
+                    withAnimation {
+                        searching = false
+                    }
+                }
+            }
+            .foregroundColor(.gray)
+            .padding(.leading, 13)
+        }
+            .frame(height: 40)
+            .cornerRadius(13)
+            .padding()
+    }
+}
+
+
+extension UIApplication {
+     func dismissKeyboard() {
+         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+     }
+ }
