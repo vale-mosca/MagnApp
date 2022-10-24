@@ -32,3 +32,5 @@ struct Recipe {
 }
 
 var caprese = Recipe(Name: <#T##String#>, Description: <#T##String#>, Image: <#T##String#>, IngredientList: <#T##Array<String>#>, CookTime: <#T##Int#>, PrepTime: <#T##Int#>, Steps: <#T##Array<Step>#>, Allergens: <#T##Array<Allergen>#>)
+
+//
