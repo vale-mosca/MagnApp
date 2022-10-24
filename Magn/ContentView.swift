@@ -32,8 +32,6 @@ struct ContentView: View {
                         
                     }
                     
-                  
-                        
                 }
                 
                 SearchBar(searchText: $searchText, searching: $searching)
@@ -42,7 +40,9 @@ struct ContentView: View {
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in
                         return fruit.hasPrefix(searchText) || searchText == ""
                     }), id: \.self) { fruit in
-                        Text(fruit)
+                        NavigationLink(destination: RelatedRecipies()){
+                            Text(fruit)
+                        }
                     }
                 }
                     .listStyle(GroupedListStyle())
@@ -58,11 +58,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .gesture(DragGesture()
-                                .onChanged({ _ in
-                        UIApplication.shared.dismissKeyboard()
-                                })
-                    )
+
             }
         }
         .frame(maxWidth: .infinity)
