@@ -12,6 +12,8 @@
 		3B06A52F29012DCC00D64155 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06A52E29012DCC00D64155 /* ContentView.swift */; };
 		3B06A53129012DCD00D64155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B06A53029012DCD00D64155 /* Assets.xcassets */; };
 		3B06A53429012DCD00D64155 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B06A53329012DCD00D64155 /* Preview Assets.xcassets */; };
+		49081EBB2906967F002F6723 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49081EBA2906967F002F6723 /* CardView.swift */; };
+		49081EBD29069807002F6723 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49081EBC29069807002F6723 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		3B06A52E29012DCC00D64155 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B06A53029012DCD00D64155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B06A53329012DCD00D64155 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49081EBA2906967F002F6723 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		49081EBC29069807002F6723 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				3B06A52C29012DCC00D64155 /* MagnApp.swift */,
+				49081EBA2906967F002F6723 /* CardView.swift */,
+				49081EBC29069807002F6723 /* Card.swift */,
 				3B0572AE2902B43A0068EEB0 /* RelatedRecipies.swift */,
 				3B06A52E29012DCC00D64155 /* ContentView.swift */,
 				3B06A53029012DCD00D64155 /* Assets.xcassets */,
@@ -142,6 +148,8 @@
 			files = (
 				3B06A52F29012DCC00D64155 /* ContentView.swift in Sources */,
 				3B06A52D29012DCC00D64155 /* MagnApp.swift in Sources */,
+				49081EBD29069807002F6723 /* Card.swift in Sources */,
+				49081EBB2906967F002F6723 /* CardView.swift in Sources */,
 				3B0572AF2902B43A0068EEB0 /* RelatedRecipies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
