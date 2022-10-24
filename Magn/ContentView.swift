@@ -16,10 +16,10 @@ struct ContentView: View {
             "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒"
     ]
     var body: some View {
+        
             
         NavigationView(){
             VStack(alignment: .leading) {
-                Image(systemName:"profile.fill")
                 
                 HStack(alignment: .top) {
                     
@@ -29,13 +29,15 @@ struct ContentView: View {
                             .font(.subheadline)
                             .padding(.horizontal)
                         //  .foregroundColor(Color.black)
+                        
                     }
                     
-                    Image("chef")
-                        .padding([.horizontal])
+                  
+                        
                 }
                 
                 SearchBar(searchText: $searchText, searching: $searching)
+                
                 List {
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in
                         return fruit.hasPrefix(searchText) || searchText == ""
@@ -62,37 +64,11 @@ struct ContentView: View {
                                 })
                     )
             }
-                
-                Text("Suggested")
-                    .font(.title)
-                    .fontWeight(.bold)
-                //  .foregroundColor(Color.black)
-                    .padding(.horizontal)
-                
-                
-                List {
-                    NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
-                    }
-                    NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
-                    }
-                    NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
-                    }
-                    
-                    NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
-                    }
-                }
-                
-                Spacer()
-            }
-            .frame(maxWidth: .infinity)
-            .background(Color("AccentColor"))
         }
-        
+        .frame(maxWidth: .infinity)
+        .background(Color("AccentColor"))
     }
+}
 
 
 extension View {
@@ -120,7 +96,7 @@ struct SearchBar: View {
                 .brightness(0.4)
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search ..", text: $searchText) { startedEditing in
+                TextField("Search...", text: $searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
                             searching = true
