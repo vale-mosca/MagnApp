@@ -58,8 +58,6 @@
 				3B7911722906940F00B58D6E /* Models */,
 				3B7911712906940600B58D6E /* Views */,
 				3B06A52C29012DCC00D64155 /* MagnApp.swift */,
-				3B0572AE2902B43A0068EEB0 /* RelatedRecipies.swift */,
-				3B06A52E29012DCC00D64155 /* ContentView.swift */,
 				3B06A53029012DCD00D64155 /* Assets.xcassets */,
 				3B06A53229012DCD00D64155 /* Preview Content */,
 			);
@@ -77,6 +75,8 @@
 		3B7911712906940600B58D6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B0572AE2902B43A0068EEB0 /* RelatedRecipies.swift */,
+				3B06A52E29012DCC00D64155 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
