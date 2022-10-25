@@ -31,6 +31,34 @@ struct Recipe {
     
 }
 
-var caprese = Recipe(Name: <#T##String#>, Description: <#T##String#>, Image: <#T##String#>, IngredientList: <#T##Array<String>#>, CookTime: <#T##Int#>, PrepTime: <#T##Int#>, Steps: <#T##Array<Step>#>, Allergens: <#T##Array<Allergen>#>)
+var step1Caprese = Step(Image: "String", Azione: "String", Descrizione: "String")
+var step2Caprese = Step(Image: "aa", Azione: "String", Descrizione: "String")
 
-//
+var glutenFree = Allergen(Name: "glutenFree", Image: "profile.fill")
+var lactoseIncluded = Allergen(Name: "lactoseIncluded", Image: "profile.fill")
+
+
+var caprese = Recipe(
+    Name: "Caprese",
+    Description: "String",
+    Image: "String",
+    IngredientList: ["mozzarella","pomodoro","basilico"],
+    CookTime: 10,
+    PrepTime: 10,
+    Steps: [step1Caprese, step2Caprese],
+    Allergens: [glutenFree,lactoseIncluded]
+)
+
+var caprese2 = Recipe(
+    Name: "Caprese",
+    Description: "String",
+    Image: "String",
+    IngredientList: ["mozzarella","pomodoro","basilico"],
+    CookTime: 10,
+    PrepTime: 10,
+    Steps: [step1Caprese, step2Caprese],
+    Allergens: [glutenFree,lactoseIncluded]
+)
+
+var cookBook: [Recipe] = [caprese, caprese2]
+
