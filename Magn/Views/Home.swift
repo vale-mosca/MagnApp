@@ -31,16 +31,35 @@ struct Home: View {
                         .fontWeight(.bold)
                     //  .foregroundColor(Color.black)
                         .padding(.horizontal, -20)
-                                       
+                    
                 }
-                
+                Section{
+                    HStack{
+                        VStack{
+                            ProgressBar()
+                            Text("lala")
+                        }.padding(20)
+                        Spacer()
+                        VStack{
+                            ProgressBar()
+                            Text("lala")
+                        }.padding(20)
+                    }
+                } header: {
+                    Text("Stats")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    //  .foregroundColor(Color.black)
+                        .padding(.horizontal, -20)
+                }
             }
         }
     }
 }
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
+    
+    
+    struct Home_Previews: PreviewProvider {
+        static var previews: some View {
+            Home()
+        }
     }
-}
