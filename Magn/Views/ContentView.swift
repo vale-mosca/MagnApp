@@ -11,35 +11,34 @@ struct ContentView: View {
     
     @State var searchText = ""
     @State var searching = false
-        
+    
     let myFruits = [
-            "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒"
+        "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒"
     ]
     var body: some View {
         
-            
         NavigationView(){
             VStack(alignment: .leading) {
                 
-                HStack(alignment: .top) {
-                    
-                    VStack(alignment: .leading, spacing: 6) {
                         
+                VStack(){
+                    HStack{
                         Text("Let's create something tasty.")
                             .font(.subheadline)
-                            .padding(.horizontal)
+                            .padding(.horizontal,20)
                         //  .foregroundColor(Color.black)
-                        
+                        Spacer()
+                            Image("chef")
+                                .padding(.horizontal,30)
+                                .padding(.vertical,-30)
                     }
-                    
+                    SearchBar(searchText: $searchText, searching: $searching)
                 }
                 
-                SearchBar(searchText: $searchText, searching: $searching)
-                
-                List {
-                    if(searchText == ""){
-                        RelatedRecipies()
-                    }else{
+                if(searchText == ""){
+                    Home()
+                } else{
+                    List {
                         ForEach(myFruits.filter({ (fruit: String) -> Bool in
                             return fruit.hasPrefix(searchText)
                         }), id: \.self) { fruit in
@@ -47,24 +46,24 @@ struct ContentView: View {
                                 Text(fruit)
                             }
                         }
-                    }
+                    }  .listStyle(GroupedListStyle())
+                    
                     
                 }
-                    .listStyle(GroupedListStyle())
-                    .navigationTitle(searching ? "Searching" : "Hello Chef!")
-                    .toolbar {
-                        if searching {
-                            Button("Cancel") {
-                                searchText = ""
-                                withAnimation {
-                                   searching = false
-                                   UIApplication.shared.dismissKeyboard()
-                                }
+                
+                
+            } .navigationTitle(searching ? "Searching" : "Hello Chef!")
+                .toolbar {
+                    if searching {
+                        Button("Cancel") {
+                            searchText = ""
+                            withAnimation {
+                                searching = false
+                                UIApplication.shared.dismissKeyboard()
                             }
                         }
                     }
-
-            }
+                }
         }
         .frame(maxWidth: .infinity)
         .background(Color("AccentColor"))
@@ -85,42 +84,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct SearchBar: View {
-    
-    @Binding var searchText: String
-    @Binding var searching: Bool
-    
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(Color.gray)
-                .brightness(0.4)
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $searchText) { startedEditing in
-                    if startedEditing {
-                        withAnimation {
-                            searching = true
-                        }
-                    }
-                } onCommit: {
-                    withAnimation {
-                        searching = false
-                    }
-                }
-            }
-            .foregroundColor(.gray)
-            .padding(.leading, 13)
-        }
-            .frame(height: 40)
-            .cornerRadius(13)
-            .padding()
+extension UIApplication {
+    func dismissKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
-
-
-extension UIApplication {
-     func dismissKeyboard() {
-         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-     }
- }
