@@ -12,9 +12,10 @@ struct ContentView: View {
     @State var searchText = ""
     @State var searching = false
     
-    let myFruits = [
-        "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒"
-    ]
+    @State var myIngredients = [
+        "Mozzarella 🧀", "Tomato 🍅", "Basil 🌿","Meat 🥩","Fish 🐟"
+    ]//basically that's not needed to be @State cause we did it in another way, but let's keep it as an example
+    
     var body: some View {
         
         NavigationView(){
@@ -36,14 +37,14 @@ struct ContentView: View {
                 }
                 
                 if(searchText == ""){
-                    Home()
+                    Home(myIngredients: $myIngredients)
                 } else{
                     List {
-                        ForEach(myFruits.filter({ (fruit: String) -> Bool in
-                            return fruit.hasPrefix(searchText)
-                        }), id: \.self) { fruit in
+                        ForEach(myIngredients.filter({ (ingredient: String) -> Bool in
+                            return ingredient.hasPrefix(searchText)
+                        }), id: \.self) { ingredient in
                             NavigationLink(destination: RelatedRecipies()){
-                                Text(fruit)
+                                Text(ingredient)
                             }
                         }
                     }  .listStyle(GroupedListStyle())

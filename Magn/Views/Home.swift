@@ -4,27 +4,31 @@
 //
 //  Created by Valerio Mosca on 24/10/22.
 //
-//updating
 
 import SwiftUI
 
 struct Home: View {
+    
+    @Binding var myIngredients: [String] //basically that's not needed cause we did it in another way
+    var seenIndex = [Int]()
+    
     var body: some View {
         VStack(alignment: .leading) {
             List {
                 Section {
                     NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
+                        Text("Tomato 🍅")
+                        
                     }
                     NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
+                        Text("Mozzarella 🧀")
                     }
                     NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
+                        Text("Meat 🥩")
                     }
                     
                     NavigationLink(destination: RelatedRecipies()) {
-                        Text("Tomato")
+                        Text("Fish 🐟")
                     }
                 } header: {
                     Text("Suggested")
@@ -43,7 +47,7 @@ struct Home: View {
                         Spacer()
                         VStack{
                             ProgressBar()
-                            Text("lala")
+                            Text("Days spent cooking")
                         }.padding(20)
                     }
                 } header: {
@@ -57,9 +61,9 @@ struct Home: View {
         }
     }
 }
-
-struct Home_Previews: PreviewProvider {
+    
+    struct Home_Previews: PreviewProvider {
         static var previews: some View {
-            Home()
+            Home(myIngredients: .constant(["Some"]))
         }
     }
