@@ -8,26 +8,22 @@
 import SwiftUI
 
 struct Home: View {
-    
-    @Binding var myIngredients: [String] //basically that's not needed cause we did it in another way
-    var seenIndex = [Int]()
-    
     var body: some View {
         VStack(alignment: .leading) {
             List {
                 Section {
-                    NavigationLink(destination: RelatedRecipies()) {
+                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Tomato 🍅")) {
                         Text("Tomato 🍅")
                         
                     }
-                    NavigationLink(destination: RelatedRecipies()) {
+                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Mozzarella 🧀")) {
                         Text("Mozzarella 🧀")
                     }
-                    NavigationLink(destination: RelatedRecipies()) {
+                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Meat 🥩")) {
                         Text("Meat 🥩")
                     }
                     
-                    NavigationLink(destination: RelatedRecipies()) {
+                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Fish 🐟")) {
                         Text("Fish 🐟")
                     }
                 } header: {
@@ -64,6 +60,6 @@ struct Home: View {
     
     struct Home_Previews: PreviewProvider {
         static var previews: some View {
-            Home(myIngredients: .constant(["Some"]))
+            Home()
         }
     }

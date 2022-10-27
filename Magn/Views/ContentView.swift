@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    //@ObservedObject var recipeData: RecipeData
+    @ObservedObject var ingridients = MyIngredients()
     @State var searchText = ""
     @State var searching = false
-    
-    @State var myIngredients = [
-        "Mozzarella 🧀", "Tomato 🍅", "Basil 🌿","Meat 🥩","Fish 🐟"
-    ]//basically that's not needed to be @State cause we did it in another way, but let's keep it as an example
     
     var body: some View {
         
         NavigationView(){
             VStack(alignment: .leading) {
                 
-                        
+                
                 VStack(){
                     HStack{
                         Text("Let's create something tasty.")
@@ -29,25 +26,28 @@ struct ContentView: View {
                             .padding(.horizontal,20)
                         //  .foregroundColor(Color.black)
                         Spacer()
-                            Image("chef")
-                                .padding(.horizontal,30)
-                                .padding(.vertical,-30)
+                        Image("chef")
+                            .padding(.horizontal,30)
+                            .padding(.vertical,-30)
                     }
                     SearchBar(searchText: $searchText, searching: $searching)
                 }
                 
                 if(searchText == ""){
-                    Home(myIngredients: $myIngredients)
+                    Home()
                 } else{
                     List {
-                        ForEach(myIngredients.filter({ (ingredient: String) -> Bool in
+                        ForEach(
+                            ingridients.myIngredients.filter({ (ingredient: String) -> Bool in
                             return ingredient.hasPrefix(searchText)
-                        }), id: \.self) { ingredient in
-                            NavigationLink(destination: RelatedRecipies()){
+                        })
+                        , id: \.self) { ingredient in
+                            NavigationLink(destination: RelatedRecipies(selectedIngredient: ingredient)){
                                 Text(ingredient)
                             }
                         }
-                    }  .listStyle(GroupedListStyle())
+                    }
+                    .listStyle(GroupedListStyle())
                     
                     
                 }
