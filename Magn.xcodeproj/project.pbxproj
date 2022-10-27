@@ -12,9 +12,12 @@
 		3B06A52F29012DCC00D64155 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06A52E29012DCC00D64155 /* ContentView.swift */; };
 		3B06A53129012DCD00D64155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B06A53029012DCD00D64155 /* Assets.xcassets */; };
 		3B06A53429012DCD00D64155 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B06A53329012DCD00D64155 /* Preview Assets.xcassets */; };
-		3B7911742906979300B58D6E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7911732906979300B58D6E /* Model.swift */; };
 		3B7911762906A38200B58D6E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7911752906A38200B58D6E /* Home.swift */; };
 		3B79117A2906B19000B58D6E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7911792906B19000B58D6E /* Utils.swift */; };
+		3B95769E290A81F7009E7957 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95769D290A81F7009E7957 /* RecipeData.swift */; };
+		3B9576A0290A8202009E7957 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95769F290A8202009E7957 /* Recipe.swift */; };
+		3B9576A2290A8244009E7957 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A1290A8244009E7957 /* Step.swift */; };
+		3B9576A4290A825A009E7957 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A3290A825A009E7957 /* Allergen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +27,12 @@
 		3B06A52E29012DCC00D64155 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B06A53029012DCD00D64155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B06A53329012DCD00D64155 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3B7911732906979300B58D6E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3B7911752906A38200B58D6E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		3B7911792906B19000B58D6E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3B95769D290A81F7009E7957 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
+		3B95769F290A8202009E7957 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		3B9576A1290A8244009E7957 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		3B9576A3290A825A009E7957 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,10 @@
 		3B7911722906940F00B58D6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3B7911732906979300B58D6E /* Model.swift */,
+				3B95769D290A81F7009E7957 /* RecipeData.swift */,
+				3B95769F290A8202009E7957 /* Recipe.swift */,
+				3B9576A1290A8244009E7957 /* Step.swift */,
+				3B9576A3290A825A009E7957 /* Allergen.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,10 +176,13 @@
 			files = (
 				3B06A52F29012DCC00D64155 /* ContentView.swift in Sources */,
 				3B06A52D29012DCC00D64155 /* MagnApp.swift in Sources */,
+				3B9576A2290A8244009E7957 /* Step.swift in Sources */,
+				3B95769E290A81F7009E7957 /* RecipeData.swift in Sources */,
 				3B7911762906A38200B58D6E /* Home.swift in Sources */,
+				3B9576A4290A825A009E7957 /* Allergen.swift in Sources */,
 				3B0572AF2902B43A0068EEB0 /* RelatedRecipies.swift in Sources */,
-				3B7911742906979300B58D6E /* Model.swift in Sources */,
 				3B79117A2906B19000B58D6E /* Utils.swift in Sources */,
+				3B9576A0290A8202009E7957 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
