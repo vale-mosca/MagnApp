@@ -62,3 +62,16 @@ var caprese2 = Recipe(
 
 var cookBook: [Recipe] = [caprese, caprese2]
 
+func createIngredientList () -> Array<String> {
+    var ingredientsListSorted: [String] = []
+    for Recipe in cookBook{
+        for ingredient in Recipe.IngredientList {
+            if(Recipe.IngredientList.contains(ingredient)){
+                continue
+            } else {
+                ingredientsListSorted.append(ingredient)
+            }
+        }
+    }
+    return ingredientsListSorted
+} //we don't use it anymore, our ingredientList is written by us, but let's keep it
