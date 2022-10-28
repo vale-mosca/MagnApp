@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Recipe {
+struct Recipe : Identifiable {
+    var id = UUID()
     var Name: String
     var Description: String
     var Image: String

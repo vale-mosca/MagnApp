@@ -18,6 +18,7 @@
 		3B9576A0290A8202009E7957 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95769F290A8202009E7957 /* Recipe.swift */; };
 		3B9576A2290A8244009E7957 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A1290A8244009E7957 /* Step.swift */; };
 		3B9576A4290A825A009E7957 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A3290A825A009E7957 /* Allergen.swift */; };
+		3B9576A6290BC8A7009E7957 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A5290BC8A7009E7957 /* StepsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		3B95769F290A8202009E7957 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		3B9576A1290A8244009E7957 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		3B9576A3290A825A009E7957 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
+		3B9576A5290BC8A7009E7957 /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		3B9576A7290BD3AC009E7957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 		3B06A52B29012DCC00D64155 /* Magn */ = {
 			isa = PBXGroup;
 			children = (
+				3B9576A7290BD3AC009E7957 /* Info.plist */,
 				3B7911722906940F00B58D6E /* Models */,
 				3B7911712906940600B58D6E /* Views */,
 				3B06A52C29012DCC00D64155 /* MagnApp.swift */,
@@ -89,6 +93,7 @@
 				3B06A52E29012DCC00D64155 /* ContentView.swift */,
 				3B7911752906A38200B58D6E /* Home.swift */,
 				3B7911792906B19000B58D6E /* Utils.swift */,
+				3B9576A5290BC8A7009E7957 /* StepsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				3B9576A4290A825A009E7957 /* Allergen.swift in Sources */,
 				3B0572AF2902B43A0068EEB0 /* RelatedRecipies.swift in Sources */,
 				3B79117A2906B19000B58D6E /* Utils.swift in Sources */,
+				3B9576A6290BC8A7009E7957 /* StepsView.swift in Sources */,
 				3B9576A0290A8202009E7957 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +320,7 @@
 				DEVELOPMENT_TEAM = Y5P2U42H49;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Magn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,6 +350,7 @@
 				DEVELOPMENT_TEAM = Y5P2U42H49;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Magn/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

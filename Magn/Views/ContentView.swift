@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@ObservedObject var recipeData: RecipeData
-    @ObservedObject var ingridients = MyIngredients()
+    @ObservedObject var ingredients = MyIngredients()
     @State var searchText = ""
     @State var searching = false
     
@@ -38,7 +37,7 @@ struct ContentView: View {
                 } else{
                     List {
                         ForEach(
-                            ingridients.myIngredients.filter({ (ingredient: String) -> Bool in
+                            ingredients.myIngredients.filter({ (ingredient: String) -> Bool in
                             return ingredient.hasPrefix(searchText)
                         })
                         , id: \.self) { ingredient in
