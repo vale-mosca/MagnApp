@@ -42,35 +42,129 @@ struct SearchBar: View {
 }
 
 struct ProgressBar: View {
-    @State private var fahrenheit = 50.0
-
+    @State private var counter = 0.0
+    
     private let minValue = 0.0
     private let maxValue = 100.0
-
-        let gradient = Gradient(colors: [.blue, .green, .pink])
-
-        var body: some View {
-            VStack {
-                Gauge(value: fahrenheit, in: minValue...maxValue) {
-                    Label("Temperature (°F)", systemImage: "thermometer.medium")
-                } currentValueLabel: {
-                    Text(Int(fahrenheit), format: .number)
-                        .foregroundColor(.green)
-
-                } minimumValueLabel: {
-                    Text("0")
-                        .foregroundColor(.blue)
-
-                } maximumValueLabel: {
-                    Text("100")
-                        .foregroundColor(.pink)
-
-                }
-                .tint(gradient)
-
-                //Slider(value: $fahrenheit, in: minValue...maxValue)
+    
+    let gradient = Gradient(colors: [.blue, .green, .pink])
+    
+    var body: some View {
+        VStack {
+            Gauge(value: counter, in: minValue...maxValue) {
+                Label("", systemImage: "thermometer.medium")
+            } currentValueLabel: {
+                Text(Int(counter), format: .number)
+                    .foregroundColor(.green)
+                
+            } minimumValueLabel: {
+                Text("0")
+                    .foregroundColor(.blue)
+                
+            } maximumValueLabel: {
+                Text("100")
+                    .foregroundColor(.pink)
+                
             }
-            .gaugeStyle(.accessoryCircular)
-            .padding()
+            .tint(gradient)
+            
+            //Slider(value: $fahrenheit, in: minValue...maxValue)
         }
+        .gaugeStyle(.accessoryCircular)
+        .padding()
     }
+}
+
+
+
+import SwiftUI
+
+struct Card {
+    let imagerecipe: String
+    let titleRecipe: String
+    let numIngredients: Int
+    let prepTime: Int
+    let cookTime: Int
+    //let allergies: String
+    
+    init(imagerecipe: String, titleRecipe: String, numIngredients: Int, prepTime: Int, cookTime: Int) {
+        self.imagerecipe = imagerecipe
+        self.titleRecipe = titleRecipe
+        self.numIngredients = numIngredients
+        self.prepTime = prepTime
+        self.cookTime = cookTime
+    }
+}
+
+struct CardView: View {
+    //EXAMPLE
+    let card: Card
+    
+    var body: some View {
+        ZStack{
+            //FRAME THAT CONTAINS RECIPE INFOS
+            RoundedRectangle(cornerRadius: 24, style: .continuous).fill(.white)
+                .shadow(radius: 10)
+            HStack{
+                Image(card.imagerecipe)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.leading, -12)
+                    .frame(width: 200.0)
+                Spacer()
+                
+                VStack(alignment: .leading, spacing: 10){
+                    Spacer()
+                    VStack(alignment: .leading, spacing: 4){
+                        Text(card.titleRecipe)
+                            .font(.system(size: 20))
+                            .fontWeight(.bold)
+                            .bold()
+                            .multilineTextAlignment(.leading).foregroundColor(Color.black)
+                        
+                        Text("\(card.numIngredients) ingredients").font(.system(size: 14)).foregroundColor(Color.black)
+                    }
+                    Spacer()
+                    
+                    VStack(alignment: .leading, spacing: 4){
+                        HStack{
+                            Text("Prep time:").font(.system(size: 12))
+                                .fontWeight(.bold).foregroundColor(Color.black)
+                            
+                            Text("\(card.prepTime) min").font(.system(size: 12)).foregroundColor(Color.black)
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 4){
+                            HStack{
+                                Text("Cook time:").font(.system(size: 12))
+                                    .fontWeight(.bold).foregroundColor(Color.black)
+                                
+                                Text("\(card.cookTime) min").font(.system(size: 12)).foregroundColor(Color.black)
+                            }
+                        }
+                            
+                            //                        HStack{
+                            //                            Image(card.allergies)
+                            //                                .resizable()
+                            //                                .aspectRatio(contentMode: .fit)
+                            //                            Image(card.allergies)
+                            //                                .resizable()
+                            //                                .aspectRatio(contentMode: .fit)
+                            //                        }.padding(.leading, -10 )
+                        }
+                        
+                        
+                        
+                        
+                        Spacer()
+                    }.padding(.trailing, 50)
+                    
+                }.cornerRadius(25)
+                
+            }
+            .frame(width: 358, height: 200)
+            
+        }
+        
+    }
+    

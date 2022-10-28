@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
+        
         VStack(alignment: .leading) {
             List {
                 Section {
@@ -16,16 +17,16 @@ struct Home: View {
                         Text("Tomato 🍅")
                         
                     }
-                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Mozzarella 🧀")) {
-                        Text("Mozzarella 🧀")
+                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Cheese 🧀")) {
+                        Text("Cheese 🧀")
                     }
                     NavigationLink(destination: RelatedRecipies(selectedIngredient: "Meat 🥩")) {
                         Text("Meat 🥩")
                     }
-                    
-                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Fish 🐟")) {
-                        Text("Fish 🐟")
+                    NavigationLink(destination: RelatedRecipies(selectedIngredient: "Pasta 🍝")) {
+                        Text("Pasta 🍝")
                     }
+                    
                 } header: {
                     Text("Suggested")
                         .font(.title)
@@ -35,17 +36,17 @@ struct Home: View {
                     
                 }
                 Section{
-                    HStack{
-                        VStack{
-                            ProgressBar()
-                            Text("lala")
-                        }.padding(20)
-                        Spacer()
-                        VStack{
+//                    HStack{
+//                        VStack{
+//                            ProgressBar()
+//                            Text("lala")
+//                        }.padding(20)
+//                        Spacer()
+                    VStack(){
                             ProgressBar()
                             Text("Days spent cooking")
-                        }.padding(20)
-                    }
+                    }.frame(maxWidth: .infinity)
+                    //}
                 } header: {
                     Text("Stats")
                         .font(.title)
