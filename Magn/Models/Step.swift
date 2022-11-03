@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct Step{
-    var Image: String //prendiamo dall'assets
+//Hashable per far funzionare il for each in StepsView
+
+struct Step: Hashable{
+    var Image: String
     var Azione: String
     var Descrizione: String
 }

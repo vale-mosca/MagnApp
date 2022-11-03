@@ -4,6 +4,9 @@
 //
 //  Created by Valerio Mosca on 24/10/22.
 //
+//  Searchbar, Progressbar, Card struct and Cardview
+
+
 
 import Foundation
 import SwiftUI
@@ -20,7 +23,8 @@ struct SearchBar: View {
                 .brightness(0.4)
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $searchText) { startedEditing in
+                TextField("Search an ingredient", text: $searchText) {
+                    startedEditing in
                     if startedEditing {
                         withAnimation {
                             searching = true
@@ -47,7 +51,7 @@ struct ProgressBar: View {
     private let minValue = 0.0
     private let maxValue = 100.0
     
-    let gradient = Gradient(colors: [.blue, .green, .pink])
+    let gradient = Gradient(colors: [.yellow, .orange, .pink])
     
     var body: some View {
         VStack {
@@ -55,11 +59,11 @@ struct ProgressBar: View {
                 Label("", systemImage: "thermometer.medium")
             } currentValueLabel: {
                 Text(Int(counter), format: .number)
-                    .foregroundColor(.green)
+                    .foregroundColor(.red)
                 
             } minimumValueLabel: {
                 Text("0")
-                    .foregroundColor(.blue)
+                    .foregroundColor(.yellow)
                 
             } maximumValueLabel: {
                 Text("100")
@@ -108,27 +112,28 @@ struct CardView: View {
             HStack{
                 Image(card.imagerecipe)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.leading, -12)
-                    .frame(width: 200.0)
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.leading, -10)
+                    .frame(width: 100.0)
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 10){
                     Spacer()
                     VStack(alignment: .leading, spacing: 4){
                         Text(card.titleRecipe)
-                            .font(.system(size: 20))
+                            .font(.system(size: 18))
                             .fontWeight(.bold)
                             .bold()
                             .multilineTextAlignment(.leading).foregroundColor(Color.black)
                         
                         Text("\(card.numIngredients) ingredients").font(.system(size: 14)).foregroundColor(Color.black)
                     }
+                    
                     Spacer()
                     
                     VStack(alignment: .leading, spacing: 4){
                         HStack{
-                            Text("Prep time:").font(.system(size: 12))
+                            Text("Prep:").font(.system(size: 12))
                                 .fontWeight(.bold).foregroundColor(Color.black)
                             
                             Text("\(card.prepTime) min").font(.system(size: 12)).foregroundColor(Color.black)
@@ -136,35 +141,29 @@ struct CardView: View {
                         
                         VStack(alignment: .leading, spacing: 4){
                             HStack{
-                                Text("Cook time:").font(.system(size: 12))
+                                Text("Cook:").font(.system(size: 12))
                                     .fontWeight(.bold).foregroundColor(Color.black)
                                 
                                 Text("\(card.cookTime) min").font(.system(size: 12)).foregroundColor(Color.black)
                             }
                         }
-                            
-                            //                        HStack{
-                            //                            Image(card.allergies)
-                            //                                .resizable()
-                            //                                .aspectRatio(contentMode: .fit)
-                            //                            Image(card.allergies)
-                            //                                .resizable()
-                            //                                .aspectRatio(contentMode: .fit)
-                            //                        }.padding(.leading, -10 )
-                        }
                         
-                        
-                        
-                        
-                        Spacer()
-                    }.padding(.trailing, 50)
+                        //                        HStack{
+                        //                            Image(card.allergies)
+                        //                                .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                            Image(card.allergies)
+                        //                                .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                        }.padding(.leading, -10 )
+                    }
                     
-                }.cornerRadius(25)
-                
-            }
-            .frame(width: 358, height: 200)
-            
+                    Spacer()
+                }.padding(.trailing, 50)
+            }.cornerRadius(25)
         }
-        
+        .frame(width: 358, height: 200)
     }
-    
+}
+
+

@@ -13,24 +13,19 @@ struct ContentView: View {
     @State var searching = false
     
     var body: some View {
-        
         NavigationView(){
             VStack(alignment: .leading) {
-                
-                
-                VStack(){
-                    HStack{
-                        Text("Let's create something tasty.")
-                            .font(.subheadline)
-                            .padding(.horizontal,20)
-                        //  .foregroundColor(Color.black)
-                        Spacer()
-                        Image("chef")
-                            .padding(.horizontal,30)
-                            .padding(.vertical,-30)
-                    }
-                    SearchBar(searchText: $searchText, searching: $searching)
+                HStack{
+                    Text("Let's create something tasty.")
+                        .font(.subheadline)
+                        .padding([.leading, .bottom], 17)
+                    
+                    Spacer()
+                    Image("chef")
+                        .padding(.horizontal,30)
+                        .padding(.vertical,-30)
                 }
+                SearchBar(searchText: $searchText, searching: $searching)
                 
                 if(searchText == ""){
                     Home()
@@ -38,20 +33,16 @@ struct ContentView: View {
                     List {
                         ForEach(
                             ingredients.myIngredients.filter({ (ingredient: String) -> Bool in
-                            return ingredient.hasPrefix(searchText)
-                        })
-                        , id: \.self) { ingredient in
-                            NavigationLink(destination: RelatedRecipies(selectedIngredient: ingredient)){
-                                Text(ingredient)
+                                return ingredient.hasPrefix(searchText)
+                            })
+                            , id: \.self) { ingredient in
+                                NavigationLink(destination: RelatedRecipies(selectedIngredient: ingredient)){
+                                    Text(ingredient)
+                                }
                             }
-                        }
                     }
                     .listStyle(GroupedListStyle())
-                    
-                    
                 }
-                
-                
             } .navigationTitle(searching ? "Searching" : "Hello Chef!")
                 .toolbar {
                     if searching {

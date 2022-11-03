@@ -3,7 +3,8 @@
 //  Magn
 //
 //  Created by Valerio Mosca on 21/10/22.
-// up
+//
+//  View of the recipes connected to the ingredient selected
 
 import Foundation
 import SwiftUI
@@ -16,39 +17,38 @@ struct RelatedRecipies: View {
     @State var resultArr: [Recipe] = []
     
     var body: some View {
-        
-        ScrollView{
-            Text(selectedIngredient).padding(10)
-                .font(.title)
-                .fontWeight(.bold)
-            //  .foregroundColor(Color.black)
-            ForEach(resultArr) { recipe in
-                NavigationLink(destination: StepsView(selectedRecipe: recipe)){
-                    CardView(card:  Card(imagerecipe: recipe.Image,
-                                         titleRecipe: recipe.Name,
-                                         numIngredients: recipe.IngredientList.count,
-                                         prepTime: recipe.PrepTime,
-                                         cookTime: recipe.CookTime)).frame(width: 358, height: 200).padding(10)
+        VStack{
+            
+            ScrollView{
+                
+                ForEach(resultArr) { recipe in
+                    NavigationLink(destination: StepsView(selectedRecipe: recipe)){
+                        CardView(card:  Card(imagerecipe: recipe.Image,
+                                             titleRecipe: recipe.Name,
+                                             numIngredients: recipe.IngredientList.count,
+                                             prepTime: recipe.PrepTime,
+                                             cookTime: recipe.CookTime)).frame(width: 358, height: 200).padding(10)
+                    }
                 }
-            }
-        }.onAppear{
-            resultArr = []
-            for Recipe in recipeData.cookBook{
+            }.onAppear{
+                resultArr = []
+                for Recipe in recipeData.cookBook{
                     for ingredient in Recipe.IngredientList {
                         if(ingredient == selectedIngredient){
                             resultArr.append(Recipe)
                             break
                         }
+                    }
                 }
             }
-            //print(resultArr)
-        }
+        }.navigationTitle(selectedIngredient)
+        
     }
 }
 
 
-//    struct RelatedRecipies_Previews: PreviewProvider {
-//        static var previews: some View {
-//            RelatedRecipies(selectedRecipe: null)
-//        }
-//    }
+struct RelatedRecipies_Previews: PreviewProvider {
+    static var previews: some View {
+        RelatedRecipies(selectedIngredient: "")
+    }
+}
