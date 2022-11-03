@@ -26,8 +26,7 @@ struct ContentView: View {
                         .padding(.vertical,-30)
                 }
                 SearchBar(searchText: $searchText, searching: $searching)
-                    .accentColor(.black)
-    
+                
                 if(searchText == ""){
                     Home()
                 } else{
