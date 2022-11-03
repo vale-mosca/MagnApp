@@ -12,7 +12,7 @@ class RecipeData: ObservableObject {
         Recipe(
             Name: "Caprese",
             Description: "String",
-            Image: "String",
+            Image: "caprese",
             IngredientList: ["Cheese 🧀","Tomato 🍅","Basil 🌿"],
             CookTime: 10,
             PrepTime: 10,
@@ -24,7 +24,7 @@ class RecipeData: ObservableObject {
         Recipe(
             Name: "Bruschetta",
             Description: "A great classic of Italian cuisine, traditionally served as an aperitif, appetizer or even as a rich and genuine snack",
-            Image: "String",
+            Image: "bruschette",
             IngredientList: ["Tomato 🍅","Bread 🍞", "Oregano 🌿"],
             CookTime: 5,
             PrepTime: 10,
@@ -36,13 +36,13 @@ class RecipeData: ObservableObject {
         Recipe(
             Name: "Meatballs",
             Description: "A simple and tasty dish, a timeless classic of Italian cuisine. Who doesn't like meatballs?",
-            Image: "String",
+            Image: "polpettealsugo",
             IngredientList: ["Tomato 🍅","Meat 🥩", "Bread 🍞", "Milk 🥛"],
             CookTime: 25,
             PrepTime: 10,
-            Steps: [Step(Image: "String", Azione: "Mix&Season", Descrizione: "Put in a bowl put some minced meat, bread soaked in milk, chopped parsley and grated Parmesan, then season with salt and pepper"),
-                    Step(Image: "String", Azione: "Shape&StartCooking", Descrizione: "Shape the dough with your hands until you create many meatballs, then in a high-sided pan, brown the meatballs with a drizzle of oil, add the tomato puree and cook for a few minutes"),
-                    Step(Image: "String", Azione: "Continue&Serve", Descrizione: "Continue cooking over low heat and with a lid for 15 minutes, then transfer the meatballs with tomato sauce on a serving dish and serve hot!")],
+            Steps: [Step(Image: "polpettealsugo1", Azione: "Mix&Season", Descrizione: "Put in a bowl put some minced meat, bread soaked in milk, chopped parsley and grated Parmesan, then season with salt and pepper"),
+                    Step(Image: "polpettealsugo2", Azione: "Shape&StartCooking", Descrizione: "Shape the dough with your hands until you create many meatballs, then in a high-sided pan, brown the meatballs with a drizzle of oil, add the tomato puree and cook for a few minutes"),
+                    Step(Image: "polpettealsugo3", Azione: "Continue&Serve", Descrizione: "Continue cooking over low heat and with a lid for 15 minutes, then transfer the meatballs with tomato sauce on a serving dish and serve hot!")],
             Allergens: [Allergen(Name: "", Image: ""),
                         Allergen(Name: "", Image: "")]
         ),
@@ -51,7 +51,7 @@ class RecipeData: ObservableObject {
         Recipe(
             Name: "Scrambled eggs with courgettes",
             Description: "It’s a very cheap, easy dish, quick to prepare and delicious like nothing else",
-            Image: "String",
+            Image: "frittatadizucchine",
             IngredientList: ["Eggs 🥚","Zucchini 🥒", "Milk 🥛", "Butter 🧈"],
             CookTime: 15,
             PrepTime: 20,
@@ -66,7 +66,7 @@ class RecipeData: ObservableObject {
         Recipe(
             Name: "Potato frittata",
             Description:"A richer version of classic frittata, this dish with simple flavours is appetizing and genuine",
-            Image: "String",
+            Image: "frittatadipatate",
             IngredientList: ["Eggs 🥚","Potatoes 🥔", "Parsley 🌿"],
             CookTime: 10,
             PrepTime: 25,
@@ -80,13 +80,13 @@ class RecipeData: ObservableObject {
         Recipe(
             Name: "Carbonara",
             Description: "It is a dish with popular ingredients and an intense flavor, born in the Eternal City. Let's find out how to make one of the most famous pasta recipes in the world!",
-            Image: "String",
+            Image: "carbonara",
             IngredientList: ["Pasta 🍝","Meat 🥩", "Egg 🥚", "Cheese 🧀"],
             CookTime: 10,
             PrepTime: 25,
-            Steps: [Step(Image: "String", Azione: "Cook&Cut", Descrizione: "Start by putting a pot of salted water on the burner and cut the guanciale into strips, then put the pieces into a non-stick pan and brown for 15 minutes over medium heat"),
-                    Step(Image: "String", Azione: "Cook&Whip", Descrizione: "In the meantime, put spaghetti in boiling water, cook for the time indicated on the package and pour the yolks into a bowl, adding the Pecorino cheese, season with black pepper and whip by hand."),
-                    Step(Image: "String", Azione: "Drain&Mix", Descrizione: "Turn off the burner with guanciale. Drain the pasta directly into it and stir it briefly to season it. Remove from heat and pour the mixture of eggs and pecorino cheese into the pan. Mix quickly to combine.Your carbonara is now ready, you can add black pepper and pecorino on top to make it even more appetizing!")],
+            Steps: [Step(Image: "carbonarastep1", Azione: "Cook&Cut", Descrizione: "Start by putting a pot of salted water on the burner and cut the guanciale into strips, then put the pieces into a non-stick pan and brown for 15 minutes over medium heat"),
+                    Step(Image: "carbonarastep2", Azione: "Cook&Whip", Descrizione: "In the meantime, put spaghetti in boiling water, cook for the time indicated on the package and pour the yolks into a bowl, adding the Pecorino cheese, season with black pepper and whip by hand."),
+                    Step(Image: "carbonarastep3", Azione: "Drain&Mix", Descrizione: "Turn off the burner with guanciale. Drain the pasta directly into it and stir it briefly to season it. Remove from heat and pour the mixture of eggs and pecorino cheese into the pan. Mix quickly to combine.Your carbonara is now ready, you can add black pepper and pecorino on top to make it even more appetizing!")],
             Allergens: [Allergen(Name: "lactosefree", Image: "")]
         )
     ]

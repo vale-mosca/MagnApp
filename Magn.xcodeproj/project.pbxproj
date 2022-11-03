@@ -19,6 +19,8 @@
 		3B9576A2290A8244009E7957 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A1290A8244009E7957 /* Step.swift */; };
 		3B9576A4290A825A009E7957 /* Allergen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A3290A825A009E7957 /* Allergen.swift */; };
 		3B9576A6290BC8A7009E7957 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9576A5290BC8A7009E7957 /* StepsView.swift */; };
+		CB3EF894290D81C200574CA5 /* RecipePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EF893290D81C200574CA5 /* RecipePreview.swift */; };
+		CB3EF896290D81CD00574CA5 /* RecipeSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EF895290D81CD00574CA5 /* RecipeSteps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		3B9576A3290A825A009E7957 /* Allergen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergen.swift; sourceTree = "<group>"; };
 		3B9576A5290BC8A7009E7957 /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
 		3B9576A7290BD3AC009E7957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB3EF893290D81C200574CA5 /* RecipePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreview.swift; sourceTree = "<group>"; };
+		CB3EF895290D81CD00574CA5 /* RecipeSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSteps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		3B06A52B29012DCC00D64155 /* Magn */ = {
 			isa = PBXGroup;
 			children = (
+				CB3EF892290D81AD00574CA5 /* Steps */,
 				3B9576A7290BD3AC009E7957 /* Info.plist */,
 				3B7911722906940F00B58D6E /* Models */,
 				3B7911712906940600B58D6E /* Views */,
@@ -107,6 +112,15 @@
 				3B9576A3290A825A009E7957 /* Allergen.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CB3EF892290D81AD00574CA5 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				CB3EF893290D81C200574CA5 /* RecipePreview.swift */,
+				CB3EF895290D81CD00574CA5 /* RecipeSteps.swift */,
+			);
+			path = Steps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,8 +198,10 @@
 				3B9576A2290A8244009E7957 /* Step.swift in Sources */,
 				3B95769E290A81F7009E7957 /* RecipeData.swift in Sources */,
 				3B7911762906A38200B58D6E /* Home.swift in Sources */,
+				CB3EF894290D81C200574CA5 /* RecipePreview.swift in Sources */,
 				3B9576A4290A825A009E7957 /* Allergen.swift in Sources */,
 				3B0572AF2902B43A0068EEB0 /* RelatedRecipies.swift in Sources */,
+				CB3EF896290D81CD00574CA5 /* RecipeSteps.swift in Sources */,
 				3B79117A2906B19000B58D6E /* Utils.swift in Sources */,
 				3B9576A6290BC8A7009E7957 /* StepsView.swift in Sources */,
 				3B9576A0290A8202009E7957 /* Recipe.swift in Sources */,
@@ -331,7 +347,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = valerio.mosca.2022.Magn;
+				PRODUCT_BUNDLE_IDENTIFIER = valerio.mosca.2022.MagnApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -361,7 +377,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = valerio.mosca.2022.Magn;
+				PRODUCT_BUNDLE_IDENTIFIER = valerio.mosca.2022.MagnApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
