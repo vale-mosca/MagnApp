@@ -15,6 +15,7 @@ struct StepsView: View {
         VStack {
             
             Divider()//Non lo togliete che implode la TabView
+                .opacity(0) //rende Divider invisibile
             
             TabView {
                 

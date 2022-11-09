@@ -59,7 +59,7 @@ struct ContentView: View {
                     }
                 }
         }
-        //.frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity)
         .background(Color("AccentColor"))
     }
 }

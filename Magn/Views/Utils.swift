@@ -19,7 +19,7 @@ struct SearchBar: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(Color("AccentColor"))
+                .foregroundColor(Color("AccentColor1"))
                 //.brightness(0.4)
             HStack {
                 Image(systemName: "magnifyingglass")
