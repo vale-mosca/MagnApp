@@ -2,7 +2,7 @@
 //  StepsView.swift
 //  Magn
 //
-//  Created by Giulia Casucci on 29/10/22.
+//  Created by São Paulo on 29/10/22.
 //
 // Steps of the recipe selected
 
@@ -15,6 +15,7 @@ struct StepsView: View {
         VStack {
             
             Divider()//Non lo togliete che implode la TabView
+                .opacity(0) //rende Divider invisibile
             
             TabView {
                 

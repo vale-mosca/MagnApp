@@ -2,7 +2,7 @@
 //  Home.swift
 //  Magn
 //
-//  Created by Valerio Mosca on 24/10/22.
+//  Created by São Paulo on 24/10/22.
 //
 // Suggested, Stats of the main page
 
@@ -16,7 +16,8 @@ struct Home: View {
             Section(header: Text("Suggested")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding(.horizontal, -20)) {
+                .padding(.horizontal, -15)
+            ) {
                     
                     NavigationLink(destination: RelatedRecipies(selectedIngredient: "Tomato 🍅"))
                     {Text("Tomato 🍅")}
@@ -34,7 +35,8 @@ struct Home: View {
             Section(header: Text("Stats")
                 .font(.title)
                 .fontWeight(.bold)
-                .padding(.horizontal, -20)){
+                .padding(.horizontal, -15)
+            ){
                     
                     VStack(){
                         ProgressBar()

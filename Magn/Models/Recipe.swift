@@ -2,7 +2,7 @@
 //  Recipe.swift
 //  Magn
 //
-//  Created by Valerio Mosca on 27/10/22.
+//  Created by São Paulo on 27/10/22.
 //
 
 import Foundation

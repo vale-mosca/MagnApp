@@ -2,7 +2,7 @@
 //  Step2.swift
 //  Magn
 //
-//  Created by Giulia Casucci on 29/10/22.
+//  Created by São Paulo on 29/10/22.
 //
 //  Steps of the recipe
 

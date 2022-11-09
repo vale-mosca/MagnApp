@@ -2,7 +2,7 @@
 //  RelatedRecipies.swift
 //  Magn
 //
-//  Created by Valerio Mosca on 21/10/22.
+//  Created by São Paulo on 21/10/22.
 //
 //  View of the recipes connected to the ingredient selected
 
