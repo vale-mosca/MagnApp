@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Magn
 //
-//  Created by São Pauloa on 20/10/22.
+//  Created by São Paulo on 20/10/22.
 //
 
 import SwiftUI
