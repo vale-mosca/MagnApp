@@ -2,7 +2,7 @@
 //  Home.swift
 //  Magn
 //
-//  Created by Valerio Mosca on 24/10/22.
+//  Created by São Paulo on 24/10/22.
 //
 // Suggested, Stats of the main page
 

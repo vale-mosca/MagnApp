@@ -2,7 +2,7 @@
 //  Utils.swift
 //  Magn
 //
-//  Created by Valerio Mosca on 24/10/22.
+//  Created by São Paulo on 24/10/22.
 //
 //  Searchbar, Progressbar, Card struct and Cardview
 
@@ -20,7 +20,7 @@ struct SearchBar: View {
         ZStack {
             Rectangle()
                 .foregroundColor(Color("AccentColor"))
-                .brightness(0.4)
+                //.brightness(0.4)
             HStack {
                 Image(systemName: "magnifyingglass")
                 TextField("Search an ingredient", text: $searchText) {

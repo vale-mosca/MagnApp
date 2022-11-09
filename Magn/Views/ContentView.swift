@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Magn
 //
-//  Created by Valerio Mosca on 20/10/22.
+//  Created by São Pauloa on 20/10/22.
 //
 
 import SwiftUI
@@ -18,14 +18,17 @@ struct ContentView: View {
                 HStack{
                     Text("Let's create something tasty.")
                         .font(.subheadline)
-                        .padding([.leading, .bottom], 17)
+                        .padding([.leading, .bottom], 18)
                     
                     Spacer()
-                    Image("chef")
-                        .padding(.horizontal,30)
-                        .padding(.vertical,-30)
+                    Image("recipebook")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .padding(.trailing, 10)
+                        .padding(.vertical,-60)
                 }
                 SearchBar(searchText: $searchText, searching: $searching)
+                
                 
                 if(searchText == ""){
                     Home()
@@ -56,7 +59,7 @@ struct ContentView: View {
                     }
                 }
         }
-        .frame(maxWidth: .infinity)
+        //.frame(maxWidth: .infinity)
         .background(Color("AccentColor"))
     }
 }
